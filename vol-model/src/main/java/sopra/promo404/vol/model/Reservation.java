@@ -2,15 +2,42 @@ package sopra.promo404.vol.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.persistence.Version;
+
+import org.hibernate.annotations.Type;
+
+@Entity
+@Table(name = "resa")
 public class Reservation {
 
+	@Id
 	private Long id;
+	@Version
+	private int version;
+	@Column(name = "code", length = 10)
 	private String code;
+	@Temporal(TemporalType.DATE)
 	private Date dtResa;
-	private Boolean confirmee;
-	private Boolean annulee;
+	
+	@Type(type="yes_no")
+	private boolean confirmee;
+	
+	@Transient
 	private Passager passager;
+	@Transient
 	private Vol vol;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "client_id")
 	private Client client;
 
 	public Reservation() {
@@ -22,6 +49,14 @@ public class Reservation {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 	public String getCode() {
@@ -40,20 +75,12 @@ public class Reservation {
 		this.dtResa = dtResa;
 	}
 
-	public Boolean getConfirmee() {
+	public boolean isConfirmee() {
 		return confirmee;
 	}
 
-	public void setConfirmee(Boolean confirmee) {
+	public void setConfirmee(boolean confirmee) {
 		this.confirmee = confirmee;
-	}
-
-	public Boolean getAnnulee() {
-		return annulee;
-	}
-
-	public void setAnnulee(Boolean annulee) {
-		this.annulee = annulee;
 	}
 
 	public Passager getPassager() {
@@ -79,5 +106,8 @@ public class Reservation {
 	public void setClient(Client client) {
 		this.client = client;
 	}
+
+
+	
 
 }

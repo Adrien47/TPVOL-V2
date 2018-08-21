@@ -5,17 +5,23 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.persistence.Version;
 
 @Entity
-
+@Table(name ="client")
 public abstract class Client {
 	
 	@Id
 	private Long id;
+	@Version
+	private int version;
 	@Column(name = "nom", length = 10)
 	private String nom;
 	@Column(name = "numeroTel", length = 10)
@@ -30,7 +36,7 @@ public abstract class Client {
 	
 	@Transient
 	private Adresse adresse;
-	@Transient
+	@OneToMany(mappedBy = "client", fetch=FetchType.LAZY)
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Client() {

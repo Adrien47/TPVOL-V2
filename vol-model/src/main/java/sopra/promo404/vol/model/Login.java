@@ -6,13 +6,14 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity
 @Table(name = "login")
 public class Login {
 	@Id
 	private Long id;
-	@Column (name = "version")
+	@Version
 	private int version;
 	@Column (name = "identifiant")
 	private String identifiant;
