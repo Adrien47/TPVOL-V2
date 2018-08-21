@@ -9,6 +9,7 @@
 
 		<class>sopra.promo404.vol.model.Ville</class>
 		<class>sopra.promo404.vol.model.Aeroport</class>
+		<class>sopra.promo404.vol.model.Aeroville</class>
 		<class>sopra.promo404.vol.model.Escale</class>
 		<class>sopra.promo404.vol.model.Vol</class>
 		<class>sopra.promo404.vol.model.CompagnieAerienneVol</class>
