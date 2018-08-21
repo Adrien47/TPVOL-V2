@@ -3,6 +3,14 @@ package sopra.promo404.vol;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+<<<<<<< Updated upstream
+=======
+import sopra.promo404.formation.Application;
+import sopra.promo404.formation.dao.IDaoFormation;
+import sopra.promo404.formation.dao.IDaoMatiere;
+import sopra.promo404.formation.dao.IDaoOrdinateur;
+import sopra.promo404.formation.dao.IDaoPersonne;
+>>>>>>> Stashed changes
 import sopra.promo404.vol.dao.IDaoPassager;
 import sopra.promo404.vol.dao.IDaoVille;
 import sopra.promo404.vol.daoJpa.DaoPassagerJpa;
