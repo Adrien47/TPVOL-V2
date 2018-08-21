@@ -3,22 +3,37 @@ package sopra.promo404.vol.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Client {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
+@Entity
+
+public abstract class Client {
+	
+	@Id
 	private Long id;
+	@Column(name = "nom", length = 10)
 	private String nom;
+	@Column(name = "numeroTel", length = 10)
 	private String numeroTel;
+	@Column(name = "numeroFax", length = 10)
 	private String numeroFax;
+	@Column(name = "email", length = 10)
 	private String email;
+	@OneToOne
+	@JoinColumn(name = "login")
 	private Login login;
+	
+	@Transient
 	private Adresse adresse;
+	@Transient
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Client() {
-	}
-
-	public Client(String nom) {
-		this.nom = nom;
 	}
 
 	public Long getId() {
@@ -84,4 +99,6 @@ public abstract class Client {
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
+
+	
 }
