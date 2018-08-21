@@ -8,6 +8,8 @@ import sopra.promo404.formation.dao.IDaoFormation;
 import sopra.promo404.formation.dao.IDaoMatiere;
 import sopra.promo404.formation.dao.IDaoOrdinateur;
 import sopra.promo404.formation.dao.IDaoPersonne;
+import sopra.promo404.vol.dao.IDaoVille;
+import sopra.promo404.vol.daoJpa.DaoVilleJpa;
 
 
 public class Application {
@@ -15,7 +17,7 @@ public class Application {
 
 	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("vol");
 	
-	private final IDaoVille daoFormation = new DaoVilleJpa();
+	private final IDaoVille daoVille = new DaoVilleJpa();
 	private final IDaoAeroport daoAeroport = new DaoAeroportJpa();
 	private final IDaoClient daoClient = new DaoClientJpa();
 	private final IDaoCompagnieAerienne daoCompagnieAerienne  = new DaoCompagnieAerienne Jpa();

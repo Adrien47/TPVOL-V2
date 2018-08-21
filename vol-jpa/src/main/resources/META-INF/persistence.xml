@@ -13,8 +13,8 @@
 		<class>sopra.promo404.vol.model.Vol</class>
 		<class>sopra.promo404.vol.model.CompagnieAerienneVol</class>
 		<class>sopra.promo404.vol.model.CompagnieAerienne</class>
-		<class>sopra.promo404.vol.model.Civilite</class>
-		<class>sopra.promo404.vol.model.FormeJuridique</class>
+<!-- 		<class>sopra.promo404.vol.model.Civilite</class> -->
+<!-- 		<class>sopra.promo404.vol.model.FormeJuridique</class> -->
 		<class>sopra.promo404.vol.model.Reservation</class>
 		<class>sopra.promo404.vol.model.Client</class>
 		<class>sopra.promo404.vol.model.Societe</class>
