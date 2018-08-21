@@ -4,17 +4,31 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Vol {
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
+@Entity
+public class Vol {
+	@Id
+	@GeneratedValue
 	private Long id;
 	private Date dtDepart;
 	private Date dtArrivee;
 	private Integer nbPlace;
 	private Boolean ouvert;
+	@Transient
 	private List<Escale> escales = new ArrayList<>();
+	@Transient
 	private List<Reservation> reservations = new ArrayList<>();
+	@Transient
 	private Aeroport depart;
+	@Transient
 	private Aeroport arrivee;
+	@OneToMany(mappedBy = "compagnieAerienne", fetch=FetchType.LAZY)
 	private List<CompagnieAerienneVol> compagnieAeriennes = new ArrayList<>();
 
 	public Vol() {

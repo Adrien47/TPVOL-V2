@@ -1,10 +1,27 @@
 package sopra.promo404.vol.model;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+import javax.persistence.Version;
+@Entity
 public class CompagnieAerienneVol {
-
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
 	private String numero;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "compagnie_aerienne_id")
 	private CompagnieAerienne compagnieAerienne;
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JoinColumn(name = "vol_id")
+	@Transient
 	private Vol vol;
 
 	public CompagnieAerienneVol() {
@@ -47,6 +64,14 @@ public class CompagnieAerienneVol {
 
 	public void setNumero(String numero) {
 		this.numero = numero;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 }
