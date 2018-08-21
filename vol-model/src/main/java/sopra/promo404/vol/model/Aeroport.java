@@ -28,6 +28,7 @@ public class Aeroport {
 	@OneToMany(mappedBy = "vol", fetch = FetchType.LAZY)
 	private List<Escale> escales = new ArrayList<>();
 	
+	
 	public Aeroport() {
 	}
 

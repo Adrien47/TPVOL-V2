@@ -8,8 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+
 
 @Entity
 public class Vol {
@@ -24,9 +26,11 @@ public class Vol {
 	private List<Escale> escales = new ArrayList<>();
 	@OneToMany(mappedBy= "vol", fetch=FetchType.LAZY)
 	private List<Reservation> reservations = new ArrayList<>();
-	@Transient
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "depart_vol_aero")
 	private Aeroport depart;
-	@Transient
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "arrivee_vol_aero")
 	private Aeroport arrivee;
 	@OneToMany(mappedBy = "compagnieAerienne", fetch=FetchType.LAZY)
 	private List<CompagnieAerienneVol> compagnieAeriennes = new ArrayList<>();
