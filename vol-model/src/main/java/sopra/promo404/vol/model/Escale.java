@@ -2,12 +2,23 @@ package sopra.promo404.vol.model;
 
 import java.util.Date;
 
-public class Escale {
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
+@Entity
+public class Escale {
+	@Id
 	private Long id;
 	private Date hDepart;
 	private Date hArrivee;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "escale_id2")
 	private Aeroport aeroport;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "escale_id")
 	private Vol vol;
 
 	public Escale() {

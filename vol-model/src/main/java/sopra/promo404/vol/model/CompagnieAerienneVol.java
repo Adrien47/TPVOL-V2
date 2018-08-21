@@ -1,5 +1,8 @@
 package sopra.promo404.vol.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,11 +22,11 @@ public class CompagnieAerienneVol {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "compagnie_aerienne_id")
 	private CompagnieAerienne compagnieAerienne;
-//	@ManyToOne(fetch=FetchType.LAZY)
-//	@JoinColumn(name = "vol_id")
-	@Transient
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "vol_id")
 	private Vol vol;
-
+	
+	
 	public CompagnieAerienneVol() {
 	}
 

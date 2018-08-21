@@ -20,9 +20,9 @@ public class Vol {
 	private Date dtArrivee;
 	private Integer nbPlace;
 	private Boolean ouvert;
-	@Transient
+	@OneToMany(mappedBy = "vol", fetch=FetchType.LAZY)
 	private List<Escale> escales = new ArrayList<>();
-	@Transient
+	@OneToMany(mappedBy= "vol", fetch=FetchType.LAZY)
 	private List<Reservation> reservations = new ArrayList<>();
 	@Transient
 	private Aeroport depart;
