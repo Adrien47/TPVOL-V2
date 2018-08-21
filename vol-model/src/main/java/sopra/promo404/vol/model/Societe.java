@@ -1,8 +1,15 @@
 package sopra.promo404.vol.model;
 
-public class Societe extends Client {
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
+
+
+public class Societe extends Client {
+@Column(name = "forme_juridique", length = 10)
 	private FormeJuridique formeJuridique;
+@Column(name = "siret", length = 14)
 	private String siret;
 
 	public Societe() {
