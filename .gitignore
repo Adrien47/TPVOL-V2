@@ -1,0 +1,12 @@
+
+vol-jpa/\.settings/
+
+vol-jpa/\.classpath
+
+vol-jpa/\.project
+
+vol-model/\.settings/
+
+vol-model/\.classpath
+
+vol-model/\.project
