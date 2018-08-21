@@ -14,14 +14,17 @@ public class Aeroville {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Transient
+	@Version
+	private int version;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="aeroport_id")
 	private Aeroport aeroport;
+	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="ville_id")
 	private Ville ville;
-	@Version
-	private int version;
-
+	
 	public Aeroville() {
 		
 	}

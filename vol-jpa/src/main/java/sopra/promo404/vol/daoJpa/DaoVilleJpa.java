@@ -56,7 +56,7 @@ public class DaoVilleJpa implements IDaoVille{
 			tx.begin();
 
 			entity = em.find(Ville.class, id);
-			entity.getAeroports();
+//			entity.getAeroports();
 
 			tx.commit();
 		} catch (Exception e) {

@@ -3,12 +3,27 @@ package sopra.promo404.vol.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Version;
+@Entity
+@Table(name="aeroport")
 public class Aeroport {
-
+@Id
 	private Long id;
+@Column
 	private String code;
-	private List<Ville> villes = new ArrayList<>();
-
+@Version
+	private int version;
+	
+//	private List<Ville> villes = new ArrayList<>();
+	@OneToMany(mappedBy = "aeroport", fetch=FetchType.LAZY)
+	private List<Aeroville> aerovilles = new ArrayList<>();
+	
 	public Aeroport() {
 	}
 
@@ -28,12 +43,20 @@ public class Aeroport {
 		this.code = code;
 	}
 
-	public List<Ville> getVilles() {
-		return villes;
+	public int getVersion() {
+		return version;
 	}
 
-	public void setVilles(List<Ville> villes) {
-		this.villes = villes;
+	public void setVersion(int version) {
+		this.version = version;
 	}
+
+//	public List<Ville> getVilles() {
+//		return villes;
+//	}
+//
+//	public void setVilles(List<Ville> villes) {
+//		this.villes = villes;
+//	}
 
 }

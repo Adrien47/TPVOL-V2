@@ -30,8 +30,8 @@ public class Ville {
 	
 	@OneToMany(mappedBy = "ville", fetch=FetchType.LAZY)
 	private List<Aeroville> aerovilles = new ArrayList<>();
-	@Transient
-	private List<Aeroport> aeroports = new ArrayList<>();
+//	@Transient
+//	private List<Aeroport> aeroports = new ArrayList<>();
 
 	public Ville() {
 	}
@@ -60,13 +60,13 @@ public class Ville {
 		this.codePostal = codePostal;
 	}
 
-	public List<Aeroport> getAeroports() {
-		return aeroports;
-	}
-
-	public void setAeroports(List<Aeroport> aeroports) {
-		this.aeroports = aeroports;
-	}
+//	public List<Aeroport> getAeroports() {
+//		return aeroports;
+//	}
+//
+//	public void setAeroports(List<Aeroport> aeroports) {
+//		this.aeroports = aeroports;
+//	}
 	
 	public int getVersion() {
 		return version;
