@@ -3,12 +3,9 @@ package sopra.promo404.vol;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import sopra.promo404.formation.Application;
-import sopra.promo404.formation.dao.IDaoFormation;
-import sopra.promo404.formation.dao.IDaoMatiere;
-import sopra.promo404.formation.dao.IDaoOrdinateur;
-import sopra.promo404.formation.dao.IDaoPersonne;
+import sopra.promo404.vol.dao.IDaoPassager;
 import sopra.promo404.vol.dao.IDaoVille;
+import sopra.promo404.vol.daoJpa.DaoPassagerJpa;
 import sopra.promo404.vol.daoJpa.DaoVilleJpa;
 
 
@@ -22,7 +19,7 @@ public class Application {
 	private final IDaoClient daoClient = new DaoClientJpa();
 	private final IDaoCompagnieAerienne daoCompagnieAerienne  = new DaoCompagnieAerienne Jpa();
 	private final IDaoCompagnieAerienneVol daoCompagnieAerienneVol  = new DaoCompagnieAerienneVol Jpa();
-	private final IDaoPassager daoPassager = new DaoPassager();
+	private final IDaoPassager daoPassager = new DaoPassagerJpa();
 	private final IDaoReservation daoReservation= new DaoReservationJpa();
 	private final IDaoVol daoVol= new DaoVolJpa();
 
