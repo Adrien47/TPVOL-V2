@@ -8,14 +8,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoClient;
-import sopra.promo404.vol.model.Client;
+import sopra.promo404.vol.dao.IDaoCompagnieAerienneVol;
+import sopra.promo404.vol.model.CompagnieAerienneVol;
 
-public class DaoClientJpa implements IDaoClient {
+public class DaoCompagnieAerienneVolJpa implements IDaoCompagnieAerienneVol {
 
 	@Override
-	public List<Client> findAll() {
-		List<Client> liste = new ArrayList<>();
+	public List<CompagnieAerienneVol> findAll() {
+		List<CompagnieAerienneVol> liste = new ArrayList<>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -25,7 +25,7 @@ public class DaoClientJpa implements IDaoClient {
 			tx = em.getTransaction();
 			tx.begin();
 
-			Query query = em.createQuery("from Client", Client.class);
+			Query query = em.createQuery("from CompagnieAerienneVol", CompagnieAerienneVol.class);
 			liste = query.getResultList();
 
 			tx.commit();
@@ -44,8 +44,8 @@ public class DaoClientJpa implements IDaoClient {
 	}
 
 	@Override
-	public Client findById(Long id) {
-		Client entity = null;
+	public CompagnieAerienneVol findById(Long id) {
+		CompagnieAerienneVol entity = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -55,7 +55,7 @@ public class DaoClientJpa implements IDaoClient {
 			tx = em.getTransaction();
 			tx.begin();
 
-			entity = em.find(Client.class, id);
+			entity = em.find(CompagnieAerienneVol.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -73,7 +73,7 @@ public class DaoClientJpa implements IDaoClient {
 	}
 
 	@Override
-	public Client save(Client entity) {
+	public CompagnieAerienneVol save(CompagnieAerienneVol entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -104,7 +104,7 @@ public class DaoClientJpa implements IDaoClient {
 	}
 
 	@Override
-	public void delete(Client entity) {
+	public void delete(CompagnieAerienneVol entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -126,7 +126,7 @@ public class DaoClientJpa implements IDaoClient {
 				em.close();
 			}
 		}
-		
+
 	}
 
 	@Override
@@ -139,7 +139,7 @@ public class DaoClientJpa implements IDaoClient {
 			tx = em.getTransaction();
 			tx.begin();
 
-			em.remove(em.find(Client.class, id));
+			em.remove(em.find(CompagnieAerienneVol.class, id));
 
 			tx.commit();
 		} catch (Exception e) {
@@ -152,7 +152,7 @@ public class DaoClientJpa implements IDaoClient {
 				em.close();
 			}
 		}
-		
+
 	}
 
 }

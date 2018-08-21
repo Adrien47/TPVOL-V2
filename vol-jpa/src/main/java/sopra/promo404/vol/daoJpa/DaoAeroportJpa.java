@@ -8,14 +8,15 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoClient;
-import sopra.promo404.vol.model.Client;
+import sopra.promo404.vol.dao.IDaoAeroport;
+import sopra.promo404.vol.model.Aeroport;
 
-public class DaoClientJpa implements IDaoClient {
+public class DaoAeroportJpa implements IDaoAeroport {
 
 	@Override
-	public List<Client> findAll() {
-		List<Client> liste = new ArrayList<>();
+	public List<Aeroport> findAll() {
+
+		List<Aeroport> liste = new ArrayList<>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -25,7 +26,7 @@ public class DaoClientJpa implements IDaoClient {
 			tx = em.getTransaction();
 			tx.begin();
 
-			Query query = em.createQuery("from Client", Client.class);
+			Query query = em.createQuery("from Aeroport", Aeroport.class);
 			liste = query.getResultList();
 
 			tx.commit();
@@ -44,8 +45,8 @@ public class DaoClientJpa implements IDaoClient {
 	}
 
 	@Override
-	public Client findById(Long id) {
-		Client entity = null;
+	public Aeroport findById(Long id) {
+		Aeroport entity = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -55,7 +56,7 @@ public class DaoClientJpa implements IDaoClient {
 			tx = em.getTransaction();
 			tx.begin();
 
-			entity = em.find(Client.class, id);
+			entity = em.find(Aeroport.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -73,7 +74,7 @@ public class DaoClientJpa implements IDaoClient {
 	}
 
 	@Override
-	public Client save(Client entity) {
+	public Aeroport save(Aeroport entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -104,7 +105,7 @@ public class DaoClientJpa implements IDaoClient {
 	}
 
 	@Override
-	public void delete(Client entity) {
+	public void delete(Aeroport entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -126,33 +127,30 @@ public class DaoClientJpa implements IDaoClient {
 				em.close();
 			}
 		}
-		
 	}
 
-	@Override
-	public void deleteById(Long id) {
-		EntityManager em = null;
-		EntityTransaction tx = null;
+@Override
+public void deleteById(Long id) {
+	EntityManager em = null;
+	EntityTransaction tx = null;
 
-		try {
-			em = Application.getInstance().getEmf().createEntityManager();
-			tx = em.getTransaction();
-			tx.begin();
+	try {
+		em = Application.getInstance().getEmf().createEntityManager();
+		tx = em.getTransaction();
+		tx.begin();
 
-			em.remove(em.find(Client.class, id));
+		em.remove(em.find(Aeroport.class, id));
 
-			tx.commit();
-		} catch (Exception e) {
-			e.printStackTrace();
-			if (tx != null) {
-				tx.rollback();
-			}
-		} finally {
-			if (em != null) {
-				em.close();
-			}
+		tx.commit();
+	} catch (Exception e) {
+		e.printStackTrace();
+		if (tx != null) {
+			tx.rollback();
 		}
-		
+	} finally {
+		if (em != null) {
+			em.close();
+		}
 	}
-
+}
 }
