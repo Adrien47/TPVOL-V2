@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
+
 import javax.persistence.Version;
 
 import org.hibernate.annotations.Type;
@@ -35,8 +35,9 @@ public class Reservation {
 
 	@OneToOne(mappedBy = "reservation", fetch = FetchType.EAGER)
 	private Passager passager;
-	@Transient
-	private Vol vol;
+	@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="vol_id")
+    private Vol vol;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "client_id")
 	private Client client;
