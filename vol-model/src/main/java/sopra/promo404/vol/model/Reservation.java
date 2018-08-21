@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,11 +29,11 @@ public class Reservation {
 	private String code;
 	@Temporal(TemporalType.DATE)
 	private Date dtResa;
-	
-	@Type(type="yes_no")
+
+	@Type(type = "yes_no")
 	private boolean confirmee;
-	
-	@Transient
+
+	@OneToOne(mappedBy = "reservation", fetch = FetchType.EAGER)
 	private Passager passager;
 	@Transient
 	private Vol vol;
@@ -106,7 +107,6 @@ public class Reservation {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-
 
 	
 

@@ -1,18 +1,41 @@
 package sopra.promo404.vol.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
+import javax.persistence.Column;
+
+import javax.persistence.Entity;
+
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "passager")
 public class Passager {
 
+	@Id
 	private Long id;
+	@Column(name = "nom", length = 10)
 	private String nom;
+	@Column(name = "prenom", length = 10)
 	private String prenom;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "date_naissance")
 	private Date dtNaissance;
+	@Column(name = "piece_identite")
 	private String pieceIdentite;
+	@Transient
 	private Adresse adresse;
-	private List<Reservation> reservations = new ArrayList<>();
+
+	@OneToOne
+	@JoinColumn(name = "resa_id")
+	private Reservation reservation;
 
 	public Passager() {
 	}
@@ -65,12 +88,12 @@ public class Passager {
 		this.adresse = adresse;
 	}
 
-	public List<Reservation> getReservations() {
-		return reservations;
+	public Reservation getReservation() {
+		return reservation;
 	}
 
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
 	}
 
 }
