@@ -3,7 +3,7 @@ package sopra.promo404.vol.model;
 import java.util.Date;
 
 import javax.persistence.Column;
-
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
+
 
 @Entity
 @Table(name = "passager")
@@ -30,7 +30,8 @@ public class Passager {
 	private Date dtNaissance;
 	@Column(name = "piece_identite")
 	private String pieceIdentite;
-	@Transient
+	@Embedded
+	@JoinColumn(name = "adresse")
 	private Adresse adresse;
 
 	@OneToOne

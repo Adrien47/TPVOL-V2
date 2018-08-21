@@ -1,9 +1,11 @@
 package sopra.promo404.vol.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -11,12 +13,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
 @Table(name ="client")
-public abstract class Client {
+public abstract class Client implements Serializable{
 	
 	@Id
 	private Long id;
@@ -33,8 +34,8 @@ public abstract class Client {
 	@OneToOne
 	@JoinColumn(name = "login")
 	private Login login;
-	
-	@Transient
+	@Embedded
+	@JoinColumn(name = "adresse")
 	private Adresse adresse;
 	@OneToMany(mappedBy = "client", fetch=FetchType.LAZY)
 	private List<Reservation> reservations = new ArrayList<>();
@@ -48,6 +49,14 @@ public abstract class Client {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 	public String getNom() {
@@ -106,5 +115,6 @@ public abstract class Client {
 		this.reservations = reservations;
 	}
 
+	
 	
 }
