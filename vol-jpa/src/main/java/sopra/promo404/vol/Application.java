@@ -4,6 +4,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import sopra.promo404.vol.dao.IDaoAeroport;
+import sopra.promo404.vol.dao.IDaoAeroville;
 import sopra.promo404.vol.dao.IDaoClient;
 import sopra.promo404.vol.dao.IDaoCompagnieAerienne;
 import sopra.promo404.vol.dao.IDaoCompagnieAerienneVol;
@@ -12,6 +13,7 @@ import sopra.promo404.vol.dao.IDaoReservation;
 import sopra.promo404.vol.dao.IDaoVille;
 import sopra.promo404.vol.dao.IDaoVol;
 import sopra.promo404.vol.daoJpa.DaoAeroportJpa;
+import sopra.promo404.vol.daoJpa.DaoAerovilleJpa;
 import sopra.promo404.vol.daoJpa.DaoClientJpa;
 import sopra.promo404.vol.daoJpa.DaoCompagnieAerienneJpa;
 import sopra.promo404.vol.daoJpa.DaoCompagnieAerienneVolJpa;
@@ -33,6 +35,7 @@ public class Application {
 	private final IDaoPassager daoPassager = new DaoPassagerJpa();
 	private final IDaoReservation daoReservation = new DaoReservationJpa();
 	private final IDaoVol daoVol = new DaoVolJpa();
+	private final IDaoAeroville daoAeroville = new DaoAerovilleJpa();
 
 	private Application() {
 	}
@@ -83,6 +86,10 @@ public class Application {
 
 	public EntityManagerFactory getEmf() {
 		return emf;
+	}
+
+	public IDaoAeroville getDaoAeroville() {
+		return daoAeroville;
 	}
 
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -14,7 +15,8 @@ import javax.persistence.Version;
 @Entity
 @Table(name = "aeroport")
 public class Aeroport {
-	@Id
+@Id
+@GeneratedValue
 	private Long id;
 	@Column
 	private String code;
@@ -30,6 +32,12 @@ public class Aeroport {
 	
 	
 	public Aeroport() {
+	}
+
+	public Aeroport(String code) {
+		super();
+		this.code = code;
+
 	}
 
 	public Long getId() {

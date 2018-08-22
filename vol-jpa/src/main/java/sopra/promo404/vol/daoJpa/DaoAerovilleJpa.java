@@ -8,15 +8,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoVille;
-import sopra.promo404.vol.model.Aeroport;
-import sopra.promo404.vol.model.Ville;
+import sopra.promo404.vol.dao.IDaoAeroville;
+import sopra.promo404.vol.model.Aeroville;
 
-public class DaoVilleJpa implements IDaoVille{
+public class DaoAerovilleJpa implements IDaoAeroville {
 
 	@Override
-	public List<Ville> findAll() {
-		List<Ville> liste = new ArrayList<>();
+	public List<Aeroville> findAll() {
+		List<Aeroville> liste = new ArrayList<>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -26,7 +25,7 @@ public class DaoVilleJpa implements IDaoVille{
 			tx = em.getTransaction();
 			tx.begin();
 
-			Query query = em.createQuery("from Ville", Ville.class);
+			Query query = em.createQuery("from Aeroville", Aeroville.class);
 			liste = query.getResultList();
 
 			tx.commit();
@@ -43,39 +42,10 @@ public class DaoVilleJpa implements IDaoVille{
 
 		return liste;
 	}
-	
-//	public List<Ville> findAllAeroport() {
-//		List<Aeroport> liste = new ArrayList<>();
-//
-//		EntityManager em = null;
-//		EntityTransaction tx = null;
-//
-//		try {
-//			em = Application.getInstance().getEmf().createEntityManager();
-//			tx = em.getTransaction();
-//			tx.begin();
-//
-//			Query query = em.createQuery("select a from Ville", Ville.class);
-//			liste = query.getResultList();
-//
-//			tx.commit();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			if (tx != null) {
-//				tx.rollback();
-//			}
-//		} finally {
-//			if (em != null) {
-//				em.close();
-//			}
-//		}
-//
-//		return liste;
-//	}
 
 	@Override
-	public Ville findById(Long id) {
-		Ville entity = null;
+	public Aeroville findById(Long id) {
+		Aeroville entity = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -85,8 +55,7 @@ public class DaoVilleJpa implements IDaoVille{
 			tx = em.getTransaction();
 			tx.begin();
 
-			entity = em.find(Ville.class, id);
-//			entity.getAeroports();
+			entity = em.find(Aeroville.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -104,7 +73,7 @@ public class DaoVilleJpa implements IDaoVille{
 	}
 
 	@Override
-	public Ville save(Ville entity) {
+	public Aeroville save(Aeroville entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -135,7 +104,7 @@ public class DaoVilleJpa implements IDaoVille{
 	}
 
 	@Override
-	public void delete(Ville entity) {
+	public void delete(Aeroville entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -157,6 +126,7 @@ public class DaoVilleJpa implements IDaoVille{
 				em.close();
 			}
 		}
+		
 	}
 
 	@Override
@@ -169,7 +139,7 @@ public class DaoVilleJpa implements IDaoVille{
 			tx = em.getTransaction();
 			tx.begin();
 
-			em.remove(em.find(Ville.class, id));
+			em.remove(em.find(Aeroville.class, id));
 
 			tx.commit();
 		} catch (Exception e) {
@@ -182,7 +152,7 @@ public class DaoVilleJpa implements IDaoVille{
 				em.close();
 			}
 		}
+		
 	}
 
-	
 }

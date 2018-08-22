@@ -34,6 +34,13 @@ public class Ville {
 //	private List<Aeroport> aeroports = new ArrayList<>();
 
 	public Ville() {
+		super();
+	}
+
+	public Ville(String nom, String codePostal) {
+		super();
+		this.nom = nom;
+		this.codePostal = codePostal;
 	}
 
 	public Long getId() {
