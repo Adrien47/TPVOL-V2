@@ -8,6 +8,7 @@ import sopra.promo404.vol.dao.IDaoAeroville;
 import sopra.promo404.vol.dao.IDaoClient;
 import sopra.promo404.vol.dao.IDaoCompagnieAerienne;
 import sopra.promo404.vol.dao.IDaoCompagnieAerienneVol;
+import sopra.promo404.vol.dao.IDaoLogin;
 import sopra.promo404.vol.dao.IDaoPassager;
 import sopra.promo404.vol.dao.IDaoReservation;
 import sopra.promo404.vol.dao.IDaoVille;
@@ -17,6 +18,7 @@ import sopra.promo404.vol.daoJpa.DaoAerovilleJpa;
 import sopra.promo404.vol.daoJpa.DaoClientJpa;
 import sopra.promo404.vol.daoJpa.DaoCompagnieAerienneJpa;
 import sopra.promo404.vol.daoJpa.DaoCompagnieAerienneVolJpa;
+import sopra.promo404.vol.daoJpa.DaoLoginJpa;
 import sopra.promo404.vol.daoJpa.DaoPassagerJpa;
 import sopra.promo404.vol.daoJpa.DaoReservationJpa;
 import sopra.promo404.vol.daoJpa.DaoVilleJpa;
@@ -36,6 +38,7 @@ public class Application {
 	private final IDaoReservation daoReservation = new DaoReservationJpa();
 	private final IDaoVol daoVol = new DaoVolJpa();
 	private final IDaoAeroville daoAeroville = new DaoAerovilleJpa();
+	private final IDaoLogin daoLogin = new DaoLoginJpa();
 
 	private Application() {
 	}
@@ -78,6 +81,9 @@ public class Application {
 
 	public IDaoVol getDaoVol() {
 		return daoVol;
+	}
+	public IDaoLogin getDaoLogin() {
+		return daoLogin;
 	}
 
 	public static void setInstance(Application instance) {
