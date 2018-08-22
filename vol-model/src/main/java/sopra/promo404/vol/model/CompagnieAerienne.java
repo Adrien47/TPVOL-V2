@@ -22,10 +22,24 @@ public class CompagnieAerienne {
 	private int version;
 	@Column(name = "nom")
 	private String nom;
-	@OneToMany(mappedBy = "compagnieAerienne", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy = "compagnieAerienne", fetch = FetchType.LAZY)
 	private List<CompagnieAerienneVol> vols = new ArrayList<>();
 
 	public CompagnieAerienne() {
+	}
+
+	public CompagnieAerienne(Long id, String nom) {
+		super();
+		this.id = id;
+		this.nom = nom;
+	}
+
+	public CompagnieAerienne(Long id, int version, String nom, List<CompagnieAerienneVol> vols) {
+		super();
+		this.id = id;
+		this.version = version;
+		this.nom = nom;
+		this.vols = vols;
 	}
 
 	public Long getId() {
