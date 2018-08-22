@@ -16,7 +16,7 @@ import javax.persistence.Version;
 @Entity
 public class CompagnieAerienne {
 	@Id
-	@GeneratedValue
+//	@GeneratedValue
 	private Long id;
 	@Version
 	private int version;
