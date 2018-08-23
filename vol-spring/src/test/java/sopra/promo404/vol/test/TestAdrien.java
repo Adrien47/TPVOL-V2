@@ -6,14 +6,14 @@ import sopra.promo404.vol.model.CompagnieAerienneVol;
 import sopra.promo404.vol.model.Vol;
 import sopra.promo404.vol.repositories.IDaoCompagnieAerienne;
 import sopra.promo404.vol.repositories.IDaoCompagnieAerienneVol;
-import sopra.promo404.vol.repositories.IDaoVol;
+import sopra.promo404.vol.repositories.IRepositoryVol;
 
 public class TestAdrien {
 
 	public static void main(String[] args) {
 		IDaoCompagnieAerienne daoCompagnieAerienne = Application.getInstance().getDaoCompagnieAerienne();
 		IDaoCompagnieAerienneVol daoCompagnieAerienneVol = Application.getInstance().getDaoCompagnieAerienneVol();
-		IDaoVol daoVol = Application.getInstance().getDaoVol();
+		IRepositoryVol daoVol = Application.getInstance().getDaoVol();
 
 		CompagnieAerienne compAer1 = new CompagnieAerienne(666L, "Vol n°1");
 		CompagnieAerienne compAer2 = new CompagnieAerienne(777L, "Vol n°2");
