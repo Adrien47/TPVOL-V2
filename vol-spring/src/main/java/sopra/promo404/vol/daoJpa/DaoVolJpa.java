@@ -9,9 +9,9 @@ import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
 import sopra.promo404.vol.model.Vol;
-import sopra.promo404.vol.repositories.IDaoVol;
+import sopra.promo404.vol.repositories.IRepositoryVol;
 
-public class DaoVolJpa implements IDaoVol {
+public class DaoVolJpa implements IRepositoryVol {
 
 	@Override
 	public List<Vol> findAll() {
