@@ -11,6 +11,8 @@ import sopra.promo404.vol.model.Ville;
 public class TestYMY {
 	public static void main(String[] args) throws ParseException {
 		
+		
+		
 //		IDaoVille idaoVille = Application.getInstance().getDaoVille();
 //		IDaoAeroport idaoAeroport = Application.getInstance().getDaoAeroport();
 //		IDaoAeroville idaoAeroville = Application.getInstance().getDaoAeroville();
