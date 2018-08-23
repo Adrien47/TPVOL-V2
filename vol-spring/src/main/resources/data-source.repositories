@@ -1,5 +1,5 @@
 sql.driver = org.postgresql.Driver
-sql.url= jdbc:postgresql://localhost:5432/eshop
+sql.url= jdbc:postgresql://localhost:5432/vol-jpa
 sql.login = postgres
 sql.password = admin
 sql.maxTotal = 10
