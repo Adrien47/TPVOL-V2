@@ -1,8 +1,11 @@
 package sopra.promo404.vol.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+
 
 
 @Entity
@@ -15,8 +18,13 @@ public class Particulier extends Client {
 	@Column(name = "prenom", length = 20)
 	private String prenom;
 
-	public Particulier() {
-		}
+
+
+	public Particulier(Civilite civilite, String prenom) {
+		super();
+		this.civilite = civilite;
+		this.prenom = prenom;
+	}
 
 	public Civilite getCivilite() {
 		return civilite;
