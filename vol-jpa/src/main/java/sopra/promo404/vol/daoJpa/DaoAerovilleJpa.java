@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoAeroville;
 import sopra.promo404.vol.model.Aeroville;
+import sopra.promo404.vol.repositories.IDaoAeroville;
 
 public class DaoAerovilleJpa implements IDaoAeroville {
 

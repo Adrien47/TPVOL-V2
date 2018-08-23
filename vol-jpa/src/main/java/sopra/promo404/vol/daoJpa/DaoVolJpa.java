@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoVol;
 import sopra.promo404.vol.model.Vol;
+import sopra.promo404.vol.repositories.IDaoVol;
 
 public class DaoVolJpa implements IDaoVol {
 

@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoReservation;
 import sopra.promo404.vol.model.Reservation;
+import sopra.promo404.vol.repositories.IDaoReservation;
 
 public class DaoReservationJpa implements IDaoReservation {
 

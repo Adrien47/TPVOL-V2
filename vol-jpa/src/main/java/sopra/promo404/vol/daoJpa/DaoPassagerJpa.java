@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoPassager;
 import sopra.promo404.vol.model.Passager;
+import sopra.promo404.vol.repositories.IDaoPassager;
 
 public class DaoPassagerJpa implements IDaoPassager {
 

@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoLogin;
 import sopra.promo404.vol.model.Login;
+import sopra.promo404.vol.repositories.IDaoLogin;
 
 public class DaoLoginJpa implements IDaoLogin {
 

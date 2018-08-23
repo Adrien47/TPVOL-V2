@@ -8,9 +8,9 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoVille;
 import sopra.promo404.vol.model.Aeroport;
 import sopra.promo404.vol.model.Ville;
+import sopra.promo404.vol.repositories.IDaoVille;
 
 public class DaoVilleJpa implements IDaoVille{
 

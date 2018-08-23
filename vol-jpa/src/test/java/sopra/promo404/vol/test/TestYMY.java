@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDao;
-import sopra.promo404.vol.dao.IDaoAeroport;
-import sopra.promo404.vol.dao.IDaoAeroville;
-import sopra.promo404.vol.dao.IDaoVille;
 import sopra.promo404.vol.model.Aeroport;
 import sopra.promo404.vol.model.Aeroville;
 import sopra.promo404.vol.model.Ville;
+import sopra.promo404.vol.repositories.IDao;
+import sopra.promo404.vol.repositories.IDaoAeroport;
+import sopra.promo404.vol.repositories.IDaoAeroville;
+import sopra.promo404.vol.repositories.IDaoVille;
 
 public class TestYMY {
 	public static void main(String[] args) throws ParseException {

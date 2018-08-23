@@ -10,10 +10,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoClient;
-import sopra.promo404.vol.dao.IDaoLogin;
-import sopra.promo404.vol.dao.IDaoPassager;
-import sopra.promo404.vol.dao.IDaoReservation;
 import sopra.promo404.vol.model.Adresse;
 import sopra.promo404.vol.model.Civilite;
 import sopra.promo404.vol.model.Login;
@@ -21,6 +17,10 @@ import sopra.promo404.vol.model.Particulier;
 import sopra.promo404.vol.model.Passager;
 import sopra.promo404.vol.model.Reservation;
 import sopra.promo404.vol.model.Societe;
+import sopra.promo404.vol.repositories.IDaoClient;
+import sopra.promo404.vol.repositories.IDaoLogin;
+import sopra.promo404.vol.repositories.IDaoPassager;
+import sopra.promo404.vol.repositories.IDaoReservation;
 
 public class TestEmeline {
 	public static void main(String[] args) throws ParseException {

@@ -8,8 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoClient;
 import sopra.promo404.vol.model.Client;
+import sopra.promo404.vol.repositories.IDaoClient;
 
 public class DaoClientJpa implements IDaoClient {
 

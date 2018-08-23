@@ -1,12 +1,12 @@
 package sopra.promo404.vol.test;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienne;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienneVol;
-import sopra.promo404.vol.dao.IDaoVol;
 import sopra.promo404.vol.model.CompagnieAerienne;
 import sopra.promo404.vol.model.CompagnieAerienneVol;
 import sopra.promo404.vol.model.Vol;
+import sopra.promo404.vol.repositories.IDaoCompagnieAerienne;
+import sopra.promo404.vol.repositories.IDaoCompagnieAerienneVol;
+import sopra.promo404.vol.repositories.IDaoVol;
 
 public class TestAdrien {
 

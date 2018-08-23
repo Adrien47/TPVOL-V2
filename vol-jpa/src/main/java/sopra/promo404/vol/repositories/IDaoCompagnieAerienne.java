@@ -1,4 +1,4 @@
-package sopra.promo404.vol.dao;
+package sopra.promo404.vol.repositories;
 
 import sopra.promo404.vol.model.CompagnieAerienne;
 

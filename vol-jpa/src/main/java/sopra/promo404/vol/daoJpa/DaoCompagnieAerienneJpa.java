@@ -10,8 +10,8 @@ import javax.persistence.Query;
 import javax.persistence.TemporalType;
 
 import sopra.promo404.vol.Application;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienne;
 import sopra.promo404.vol.model.CompagnieAerienne;
+import sopra.promo404.vol.repositories.IDaoCompagnieAerienne;
 
 public class DaoCompagnieAerienneJpa implements IDaoCompagnieAerienne {
 
