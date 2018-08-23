@@ -27,7 +27,7 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="eshop.model" />
+		<property name="packagesToScan" value="sopra.promo404.vol.model" />
 
 		<!-- On précise le provider ... -->
 		<property name="jpaVendorAdapter">
