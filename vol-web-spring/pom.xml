@@ -15,6 +15,11 @@
 	</properties>
 
 	<dependencies>
+	<dependency>
+			<groupId>sopra.promo404</groupId>
+			<artifactId>vol-model</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>sopra.promo404</groupId>
 			<artifactId>vol-spring</artifactId>
