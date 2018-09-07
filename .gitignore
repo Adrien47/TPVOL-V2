@@ -16,3 +16,9 @@ vol-model/\.project
 vol-spring/\.settings/
 
 vol-spring/\.classpath
+
+vol-web-spring/\.settings/
+
+vol-web-spring/target/
+
+vol-web-spring/\.classpath
