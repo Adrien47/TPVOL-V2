@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 public class Vol {
@@ -28,7 +30,9 @@ public class Vol {
 	public void setVersion(int version) {
 		this.version = version;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd hh:MM")
 	private Date dtDepart;
+	@DateTimeFormat(pattern="yyyy-MM-dd hh:MM")
 	private Date dtArrivee;
 	private Integer nbPlace;
 	private Boolean ouvert;

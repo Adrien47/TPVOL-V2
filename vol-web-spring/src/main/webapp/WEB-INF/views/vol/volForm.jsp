@@ -24,96 +24,60 @@
 
 		<section>
 			<form action="eleve/save" method="post">
-				<input type="hidden" name="id" id="id" value="${monEleve.id}"/>
-				<input type="hidden" name="version" id="version" value="${monEleve.version}"/>
+				<input type="hidden" name="id" id="id" value="${monVol.id}"/>
+				<input type="hidden" name="version" id="version" value="${monVol.version}"/>
 				
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Civilité</label>
+					<label class="col-sm-2 col-form-label">Date de Départ</label>
 					<div class="col-sm-10">
-						<select class="custom-select" name="civilite" id="civilite">
+						<input type="date" step="1" class="form-control" name="dtDepart"
+							id="dtDepart" placeholder="La date de départ" value="${monVol.dtDepart}"/>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Date d'Arrivée</label>
+					<div class="col-sm-10">
+						<input type="date" step="1" class="form-control" name="dtArrivee"
+							id="dtArrivee" placeholder="La date d'arrivée" value="${monVol.dtArrivee}"/>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Nombre de Places</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="nbPlace" id="nbPlace"
+							placeholder="Le nombre de places" required value="${monVol.nbPlace}"/>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Status : Ouvert ?</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="ouvert" id="ouvert"
+							placeholder="TRUE ou FALSE" required value="${monVol.ouvert}"/>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Aeroport de Départ</label>
+					<div class="col-sm-10">
+						<select class="custom-select" name="depart.id" required>
 							<option value=""></option>
-							<c:forEach items="${civilites}" var="civ">
-								<option value="${civ}" ${monEleve.civilite eq civ?'selected':''}>${civ.label}</option>
+							<c:forEach items="${aeroports}" var="dep">
+								<option value="${dep.id}" ${monVol.depart.id eq dep.id?'selected':''}>${dep.code}</option>
 							</c:forEach>
 						</select>
 					</div>
 				</div>
 				
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Nom</label>
+					<label class="col-sm-2 col-form-label">Aeroport d'Arrivée</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="nom" id="nom"
-							placeholder="Le nom" required value="${monEleve.nom}"/>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Prénom</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="prenom" id="prenom"
-							placeholder="Le prénom" required value="${monEleve.prenom}"/>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Date de naissance</label>
-					<div class="col-sm-10">
-						<input type="date" step="1" class="form-control" name="dtNaissance"
-							id="dtNaissance" placeholder="La date de naissance" value="${monEleve.dtNaissance}"/>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Rue</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="adresse.rue"
-							placeholder="La rue" value="${monEleve.adresse.rue}"/>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Code postal</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="adresse.codePostal"
-							placeholder="Le code postal" value="${monEleve.adresse.codePostal}"/>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Ville</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="adresse.ville"
-							placeholder="La ville" value="${monEleve.adresse.ville}"/>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Pays</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="adresse.pays"
-							placeholder="Le pays" value="${monEleve.adresse.pays}"/>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Formateur</label>
-					<div class="col-sm-10">
-						<select class="custom-select" name="formateur.id" required>
+						<select class="custom-select" name="arrivee.id" required>
 							<option value=""></option>
-							<c:forEach items="${formateurs}" var="forma">
-								<option value="${forma.id}" ${monEleve.formateur.id eq forma.id?'selected':''}>${forma.prenom} ${forma.nom}</option>
-							</c:forEach>
-						</select>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Ordinateur</label>
-					<div class="col-sm-10">
-						<select class="custom-select" name="ordinateur.code" required>
-							<option value=""></option> 
-							<c:forEach items="${ordinateurs}" var="ordi">
-								<option value="${ordi.code}" ${monEleve.ordinateur.code eq ordi.code?'selected':''}>${ordi.code} - ${ordi.ram} (${ordi.ssd?'avec SSD':'sans SSD'})</option>
+							<c:forEach items="${aeroports}" var="arr">
+								<option value="${arr.id}" ${monVol.arrivee.id eq arr.id?'selected':''}>${arr.code}</option>
 							</c:forEach>
 						</select>
 					</div>
