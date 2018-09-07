@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
+
+import org.springframework.format.annotation.DateTimeFormat;
  
 
 @Entity
@@ -21,6 +23,7 @@ import javax.persistence.Version;
 public class Passager {
 
 	@Id
+	@GeneratedValue
 	private Long id;
 	@Version
 	private int version;
@@ -38,6 +41,7 @@ public class Passager {
 	private String prenom;
 	@Temporal(TemporalType.DATE)
 	@Column(name = "date_naissance")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dtNaissance;
 	@Column(name = "piece_identite")
 	private String pieceIdentite;
