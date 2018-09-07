@@ -7,11 +7,21 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 @Entity
 public class Escale {
 	@Id
 	private Long id;
+	@Version
+	private int version;
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
 	private Date hDepart;
 	private Date hArrivee;
 	@ManyToOne(fetch=FetchType.LAZY)

@@ -21,6 +21,7 @@ public class Ville {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
 	@Column
 	private String nom;
 	@Column

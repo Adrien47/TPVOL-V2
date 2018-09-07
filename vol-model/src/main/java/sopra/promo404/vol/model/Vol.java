@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 
 @Entity
@@ -18,6 +19,15 @@ public class Vol {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Version
+	private int version;
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
 	private Date dtDepart;
 	private Date dtArrivee;
 	private Integer nbPlace;

@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Version;
  
 
 @Entity
@@ -21,6 +22,16 @@ public class Passager {
 
 	@Id
 	private Long id;
+	@Version
+	private int version;
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
 	@Column(name = "nom", length = 10)
 	private String nom;
 	@Column(name = "prenom", length = 10)
