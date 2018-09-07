@@ -12,3 +12,7 @@ vol-model/\.classpath
 vol-model/\.project
 
 \.project
+
+vol-spring/\.settings/
+
+vol-spring/\.classpath
