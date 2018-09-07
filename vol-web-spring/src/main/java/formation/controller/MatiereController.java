@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import sopra.promo404.formation.model.Difficulte;
 import sopra.promo404.formation.model.Matiere;
 import sopra.promo404.formation.repository.IRepositoryMatiere;
 
