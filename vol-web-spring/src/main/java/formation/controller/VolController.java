@@ -32,6 +32,7 @@ public class VolController {
 		List<Vol> vols = volRepo.findAll();
 
 		model.addAttribute("vols", vols);
+		model.addAttribute("aeroports", aeroportRepo.findAll());
 
 		return "vol/vols";
 	}

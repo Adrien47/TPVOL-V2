@@ -30,9 +30,9 @@ public class Vol {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:MM")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dtDepart;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:MM")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dtArrivee;
 	private Integer nbPlace;
 	private Boolean ouvert;
@@ -40,10 +40,10 @@ public class Vol {
 	private List<Escale> escales = new ArrayList<>();
 	@OneToMany(mappedBy= "vol", fetch=FetchType.LAZY)
 	private List<Reservation> reservations = new ArrayList<>();
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name = "depart_vol_aero")
 	private Aeroport depart;
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name = "arrivee_vol_aero")
 	private Aeroport arrivee;
 	@OneToMany(mappedBy = "compagnieAerienne", fetch=FetchType.LAZY)

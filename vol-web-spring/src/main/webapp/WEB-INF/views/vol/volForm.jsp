@@ -8,7 +8,7 @@
 <head>
 <title>Edition du vol</title>
 <meta charset="UTF-8" />
-<base href="/formation-web-spring/" />
+<base href="/vol-web-spring/" />
 <meta name="viewport" content="width=devide-width, initial-scale=1" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
 		</header>
 
 		<section>
-			<form action="eleve/save" method="post">
+			<form action="vol/save" method="post">
 				<input type="hidden" name="id" id="id" value="${monVol.id}"/>
 				<input type="hidden" name="version" id="version" value="${monVol.version}"/>
 				
@@ -40,22 +40,6 @@
 					<div class="col-sm-10">
 						<input type="date" step="1" class="form-control" name="dtArrivee"
 							id="dtArrivee" placeholder="La date d'arrivée" value="${monVol.dtArrivee}"/>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Nombre de Places</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="nbPlace" id="nbPlace"
-							placeholder="Le nombre de places" required value="${monVol.nbPlace}"/>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Status : Ouvert ?</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" name="ouvert" id="ouvert"
-							placeholder="TRUE ou FALSE" required value="${monVol.ouvert}"/>
 					</div>
 				</div>
 				
@@ -82,6 +66,24 @@
 						</select>
 					</div>
 				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Nombre de Places</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="nbPlace" id="nbPlace"
+							placeholder="Le nombre de places" required value="${monVol.nbPlace}"/>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Status : Ouvert ?</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="ouvert" id="ouvert"
+							placeholder="TRUE ou FALSE" required value="${monVol.ouvert}"/>
+					</div>
+				</div>
+				
+				
 
 				<div class="form-group row">
 					<div class="col-sm-2"></div>
@@ -89,7 +91,7 @@
 						<button type="submit" class="btn btn-primary col-sm-12">Envoyer</button>
 					</div>
 					<div class="col-sm-3">
-						<a href="eleve/list" class="btn btn-warning col-sm-12">Annuler</a>
+						<a href="vol/list" class="btn btn-warning col-sm-12">Annuler</a>
 					</div>
 				</div>
 			</form>

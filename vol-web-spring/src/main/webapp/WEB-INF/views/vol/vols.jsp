@@ -9,7 +9,7 @@
 <meta name="description"
 	content="Dépensez ici votre argent en toute impunité." />
 <meta charset="UTF-8" />
-<base href="/formation-web-spring/" />
+<base href="/vol-web-spring/" />
 <meta name="viewport" content="width=devide-width, initial-scale=1" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -45,12 +45,12 @@
 						<tr>
 							<td>${vol.id}</td>
 							<td>${vol.version}</td>
-							<td><fmt:formatDate value="${vol.dtDepart}" pattern="dd/MM/yyyy HH:mm" />
-							<td><fmt:formatDate value="${vol.dtArrivee}" pattern="dd/MM/yyyy HH:mm" />
+							<td><fmt:formatDate value="${vol.dtDepart}" pattern="dd/MM/yyyy" />
+							<td><fmt:formatDate value="${vol.dtArrivee}" pattern="dd/MM/yyyy" />
 							<td>${vol.nbPlace}</td>
 							<td>${vol.ouvert}</td>
-<%-- 							<td>${vol.depart.nom}</td> --%>
-<%-- 							<td>${vol.arrivee.nom}</td> --%>
+							<td>${vol.depart.code}</td>
+							<td>${vol.arrivee.code}</td>
 							<td><a href="vol/edit/${vol.id}" class="btn btn-info btn-sm">Editer</a>
 								<a href="vol/delete/${vol.id}" class="btn btn-danger btn-sm">Supprimer</a></td>
 						</tr>
