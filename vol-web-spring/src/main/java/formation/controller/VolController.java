@@ -12,71 +12,67 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import sopra.promo404.formation.model.Civilite;
-import sopra.promo404.formation.model.Eleve;
-import sopra.promo404.formation.model.Personne;
-import sopra.promo404.formation.repository.IRepositoryOrdinateur;
-import sopra.promo404.formation.repository.IRepositoryPersonne;
+import sopra.promo404.vol.model.Vol;
+import sopra.promo404.vol.repositories.IRepositoryAeroport;
+import sopra.promo404.vol.repositories.IRepositoryVol;
+
 
 @Controller
-@RequestMapping("/eleve")
+@RequestMapping("/vol")
 public class VolController {
 
 	@Autowired
-	private IRepositoryPersonne personneRepo;
+	private IRepositoryVol volRepo;
 	
 	@Autowired
-	private IRepositoryOrdinateur ordinateurRepo;
+	private IRepositoryAeroport aeroportRepo;
 
 	@GetMapping(value = { "", "/list" })
 	public String list(Model model) {
-		List<Eleve> eleves = personneRepo.findAllEleve();
+		List<Vol> vols = volRepo.findAll();
 
-		model.addAttribute("eleves", eleves);
+		model.addAttribute("vols", vols);
 
-		return "eleve/eleves";
+		return "vol/vols";
 	}
 
 	@GetMapping("/add")
 	public String add(Model model) {
-		model.addAttribute("monEleve", new Eleve());
-		model.addAttribute("formateurs", personneRepo.findAllFormateur());
-		model.addAttribute("civilites", Civilite.values());
-		model.addAttribute("ordinateurs", ordinateurRepo.findAllAvailable());
+		model.addAttribute("monVol", new Vol());
+		model.addAttribute("aeroports", aeroportRepo.findAll());
 
-		return "eleve/eleveForm";
+		return "vol/volForm";
 	}
 
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable Long id, Model model) {
-		Optional<Personne> eleve = personneRepo.findById(id);
+		Optional<Vol> vol = volRepo.findById(id);
 
-		if (eleve.isPresent()) {
-			model.addAttribute("monEleve", eleve.get());
+		if (vol.isPresent()) {
+			model.addAttribute("monVol", vol.get());
 		} else {
-			model.addAttribute("monEleve", new Eleve());
+			model.addAttribute("monVol", new Vol());
 		}
 		
-		model.addAttribute("formateurs", personneRepo.findAllFormateur());
-		model.addAttribute("civilites", Civilite.values());
-		model.addAttribute("ordinateurs", ordinateurRepo.findAllAvailableByEleve(id));
 
-		return "eleve/eleveForm";
+		model.addAttribute("aeroports", aeroportRepo.findAll());
+
+		return "vol/volForm";
 	}
 
 	@PostMapping("/save")
-	public String save(@ModelAttribute("monEleve") Eleve eleve) {
+	public String save(@ModelAttribute("monVol") Vol vol) {
 		
 		
 		
-		personneRepo.save(eleve);
+		volRepo.save(vol);
 
 		return "redirect:list";
 	}
 
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable Long id, Model model) {
-		personneRepo.deleteById(id);
+		volRepo.deleteById(id);
 
 		return "forward:../list";
 	}

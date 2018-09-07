@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="sopra.promo404.formation.model.Matiere"%>
+<%@ page import="sopra.promo404.vol.model.Vol"%>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Edition de l'élève</title>
+<title>Edition du vol</title>
 <meta charset="UTF-8" />
 <base href="/formation-web-spring/" />
 <meta name="viewport" content="width=devide-width, initial-scale=1" />
@@ -18,7 +18,7 @@
 	<div class="container">
 		<header class="header">
 
-			<h1>Edition d'élève</h1>
+			<h1>Edition du vol</h1>
 
 		</header>
 
