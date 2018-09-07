@@ -16,12 +16,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import sopra.promo404.vol.model.Reservation;
 import sopra.promo404.vol.repositories.IRepositoryReservation;
+import sopra.promo404.vol.repositories.IRepositoryVol;
 
 @Controller
 @RequestMapping("/reservation")
 public class ReservationController {
 	@Autowired
 	private IRepositoryReservation reservationRepo;
+	
+	@Autowired
+	private IRepositoryVol volRepo;
 	
 	@GetMapping(value = { "", "/list" })
 	public String list(Model model) {
@@ -35,6 +39,7 @@ public class ReservationController {
 	@GetMapping("/add")
 	public String add(Model model) {
 		model.addAttribute("maReservation", new Reservation());
+		model.addAttribute("vols", volRepo.findAll());
 
 		return "reservation/reservationForm";
 	}
@@ -52,8 +57,8 @@ public class ReservationController {
 		return "reservation/reservationForm";
 	}
 	@PostMapping("/save")
-	public String save(@ModelAttribute("maReservation")Reservation matiere) {
-		reservationRepo.save(matiere);
+	public String save(@ModelAttribute("maReservation")Reservation reservation) {
+		reservationRepo.save(reservation);
 
 		return "redirect:list";
 	}

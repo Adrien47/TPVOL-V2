@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Editez votre Réservation</title>
 <meta charset="UTF-8" />
-<base href="/formation-web-spring/" />
+<base href="/vol-web-spring/"  />
 <meta name="viewport" content="width=devide-width, initial-scale=1" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -46,8 +46,8 @@
 					<div class="col-sm-10">
 						<select class="custom-select" name="confirmee" id="confirmee">
 							<option value=""></option>
-							<option value="TRUE" ${maReservation.confirmee eq 'FACILE'?'selected':''}>TRUE</option>
-							<option value="FALSE" ${maReservation.confirmee eq 'MOYEN'?'selected':''}>FALSE</option>
+							<option value="TRUE" ${maReservation.confirmee eq 'TRUE'?'selected':''}>TRUE</option>
+							<option value="FALSE" ${maReservation.confirmee eq 'FALSE'?'selected':''}>FALSE</option>
 						
 						</select>
 					</div>
@@ -58,8 +58,8 @@
 					<div class="col-sm-10">
 						<select class="custom-select" name="confirmee" id="confirmee">
 							<option value=""></option>
-							<option value="TRUE" ${maReservation.annulee eq 'FACILE'?'selected':''}>TRUE</option>
-							<option value="FALSE" ${maReservation.annulee eq 'MOYEN'?'selected':''}>FALSE</option>
+							<option value="TRUE" ${maReservation.annulee eq 'TRUE'?'selected':''}>TRUE</option>
+							<option value="FALSE" ${maReservation.annulee eq 'FALSE'?'selected':''}>FALSE</option>
 						
 						</select>
 					</div>

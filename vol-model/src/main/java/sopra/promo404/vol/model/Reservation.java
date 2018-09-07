@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,6 +23,7 @@ import org.hibernate.annotations.Type;
 public class Reservation {
 
 	@Id
+	@GeneratedValue
 	private Long id;
 	@Version
 	private int version;
@@ -31,8 +33,11 @@ public class Reservation {
 	private Date dtResa;
 
 	@Type(type = "yes_no")
-	private boolean confirmee;
+	private boolean annulee;
 
+	@Type(type = "yes_no")
+	private boolean confirmee;
+	
 	@OneToOne(mappedBy = "reservation", fetch = FetchType.EAGER)
 	private Passager passager;
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -84,6 +89,15 @@ public class Reservation {
 	public void setConfirmee(boolean confirmee) {
 		this.confirmee = confirmee;
 	}
+	
+	public boolean isAnnulee() {
+		return annulee;
+	}
+
+	public void setAnnulee(boolean annulee) {
+		this.annulee = annulee;
+	}
+	
 
 	public Passager getPassager() {
 		return passager;

@@ -9,7 +9,7 @@
 <meta name="description"
 	content="" />
 <meta charset="UTF-8" />
-<base href="/formation-web-spring/" />
+<base href="/vol-web-spring/" />
 <meta name="viewport" content="width=devide-width, initial-scale=1" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -46,7 +46,7 @@
 							<td><fmt:formatDate value="${reservation.dtResa}"
 									pattern="dd/MM/yyyy" /></td>
 							<td>${reservation.confirmee}</td>
-						<td>${reservation.annulee}</td>
+							<td>${reservation.annulee}</td>
 							
 							
 
@@ -62,7 +62,7 @@
 
 				</tbody>
 			</table>
-			<a href="reservation?action=add" class="btn btn-success">Ajouter</a>
+			<a href="reservation/add" class="btn btn-success">Ajouter</a>
 
 		</section>
 	</div>
