@@ -36,8 +36,8 @@
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Date de Reservation</label>
 					<div class="col-sm-10">
-						<input type="Date" step="1" class="form-control" name="date"
-							id="duree" placeholder="La date de résa" required value="${maReservation.dtResa}"/>
+						<input type="Date" step="1" class="form-control" name="dtResa"
+							id="dtResa" placeholder="La date de résa" required value="${maReservation.dtResa}"/>
 					</div>
 				</div>
 

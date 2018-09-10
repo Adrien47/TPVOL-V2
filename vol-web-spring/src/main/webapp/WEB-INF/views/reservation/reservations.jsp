@@ -46,7 +46,7 @@
 							<td>${reservation.version}</td>
 							<td>${reservation.code}</td>
 							<td><fmt:formatDate value="${reservation.dtResa}"
-									pattern="yyyy/MM/dd" /></td>
+									pattern="dd/MM/yyyy" /></td>
 							<td>${reservation.confirmee}</td>
 							<td>${reservation.annulee}</td>
 							
