@@ -46,15 +46,15 @@
 							<td>${reservation.version}</td>
 							<td>${reservation.code}</td>
 							<td><fmt:formatDate value="${reservation.dtResa}"
-									pattern="dd/MM/yyyy" /></td>
+									pattern="yyyy/MM/dd" /></td>
 							<td>${reservation.confirmee}</td>
 							<td>${reservation.annulee}</td>
 							
 							
 
-							<td><a href="reservation?action=edit&id=${reservation.id}"
+							<td><a href="reservation/edit/${reservation.id}"
 								class="btn btn-info btn-sm">Editer</a> <a
-								href="reservation?action=delete&id=${reservation.id}"
+								href="reservation/delete/${reservation.id}"
 								class="btn btn-danger btn-sm">Supprimer</a></td>
 
 

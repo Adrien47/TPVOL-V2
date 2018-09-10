@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -37,7 +37,7 @@
 					<label class="col-sm-2 col-form-label">Date de Reservation</label>
 					<div class="col-sm-10">
 						<input type="Date" step="1" class="form-control" name="date"
-							id="duree" placeholder="La date de résa" required value="${maMatiere.dtResa}"/>
+							id="duree" placeholder="La date de résa" required value="${maReservation.dtResa}"/>
 					</div>
 				</div>
 
@@ -56,7 +56,7 @@
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Annulation</label>
 					<div class="col-sm-10">
-						<select class="custom-select" name="confirmee" id="confirmee">
+						<select class="custom-select" name="annulee" id="annulee">
 							<option value=""></option>
 							<option value="TRUE" ${maReservation.annulee eq 'TRUE'?'selected':''}>TRUE</option>
 							<option value="FALSE" ${maReservation.annulee eq 'FALSE'?'selected':''}>FALSE</option>

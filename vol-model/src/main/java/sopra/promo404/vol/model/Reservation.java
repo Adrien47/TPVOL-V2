@@ -17,6 +17,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
 import org.hibernate.annotations.Type;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "resa")
@@ -29,7 +30,8 @@ public class Reservation {
 	private int version;
 	@Column(name = "code", length = 10)
 	private String code;
-	@Temporal(TemporalType.DATE)
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dtResa;
 
 	@Type(type = "yes_no")
