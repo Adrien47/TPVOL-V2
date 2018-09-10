@@ -64,8 +64,6 @@ public class VolController {
 	@PostMapping("/save")
 	public String save(@ModelAttribute("monVol") Vol vol) {
 		
-		
-		
 		volRepo.save(vol);
 
 		return "redirect:list";

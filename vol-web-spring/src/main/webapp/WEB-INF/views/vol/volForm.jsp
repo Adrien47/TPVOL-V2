@@ -76,12 +76,17 @@
 				</div>
 				
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Status : Ouvert ?</label>
+					<label class="col-sm-2 col-form-label">Statut des réservations</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" name="ouvert" id="ouvert"
-							placeholder="TRUE ou FALSE" required value="${monVol.ouvert}"/>
+						<select class="custom-select" name="ouvert" id="ouvert">
+							<option value=""></option>
+							<option value="TRUE" ${monVol.ouvert eq 'TRUE'?'selected':''}>Ouvertes</option>
+							<option value="FALSE" ${monVol.ouvert eq 'FALSE'?'selected':''}>Fermées</option>
+						
+						</select>
 					</div>
 				</div>
+				
 				
 				
 
