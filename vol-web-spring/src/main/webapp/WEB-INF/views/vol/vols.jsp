@@ -45,8 +45,8 @@
 						<tr>
 							<td>${vol.id}</td>
 							<td>${vol.version}</td>
-							<td><fmt:formatDate value="${vol.dtDepart}" pattern="dd/MM/yyyy" />
-							<td><fmt:formatDate value="${vol.dtArrivee}" pattern="dd/MM/yyyy" />
+							<td><fmt:formatDate value="${vol.dtDepart}" pattern="dd/MM/yyyy" /></td>
+							<td><fmt:formatDate value="${vol.dtArrivee}" pattern="dd/MM/yyyy" /></td>
 							<td>${vol.nbPlace}</td>
 							<td>
 							<c:choose>

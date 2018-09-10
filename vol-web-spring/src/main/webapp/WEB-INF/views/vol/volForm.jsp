@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="sopra.promo404.vol.model.Vol"%>
-<%@ page import="java.util.List"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,20 +25,18 @@
 			<form action="vol/save" method="post">
 				<input type="hidden" name="id" id="id" value="${monVol.id}"/>
 				<input type="hidden" name="version" id="version" value="${monVol.version}"/>
-				
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Date de Départ</label>
 					<div class="col-sm-10">
 						<input type="date" step="1" class="form-control" name="dtDepart"
-							id="dtDepart" placeholder="La date de départ" value="${monVol.dtDepart}"/>
+							id="dtDepart" placeholder="La date de départ" value="<fmt:formatDate value="${monVol.dtDepart}" pattern="yyyy-MM-dd" />"/>
 					</div>
 				</div>
-				
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Date d'Arrivée</label>
 					<div class="col-sm-10">
 						<input type="date" step="1" class="form-control" name="dtArrivee"
-							id="dtArrivee" placeholder="La date d'arrivée" value="${monVol.dtArrivee}"/>
+							id="dtArrivee" placeholder="La date d'arrivée" value="<fmt:formatDate value="${monVol.dtArrivee}" pattern="yyyy-MM-dd" />"/>
 					</div>
 				</div>
 				
