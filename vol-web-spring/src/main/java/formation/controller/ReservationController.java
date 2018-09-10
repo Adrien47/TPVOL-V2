@@ -32,6 +32,7 @@ public class ReservationController {
 		List<Reservation> reservations = reservationRepo.findAll();
 
 		model.addAttribute("mesReservations", reservations);
+		model.addAttribute("vols", volRepo.findAll());
 
 		return "reservation/reservations";
 	}
@@ -53,7 +54,7 @@ public class ReservationController {
 		} else {
 			model.addAttribute("maReservation", new Reservation());
 		}
-
+model.addAttribute("vols", volRepo.findAll());
 		return "reservation/reservationForm";
 	}
 	@PostMapping("/save")

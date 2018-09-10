@@ -46,8 +46,8 @@
 					<div class="col-sm-10">
 						<select class="custom-select" name="confirmee" id="confirmee">
 							<option value=""></option>
-							<option value="TRUE" ${maReservation.confirmee eq 'TRUE'?'selected':''}>TRUE</option>
-							<option value="FALSE" ${maReservation.confirmee eq 'FALSE'?'selected':''}>FALSE</option>
+							<option value="TRUE" ${maReservation.confirmee eq 'TRUE'?'selected':''}>CONFIRMEE</option>
+							<option value="FALSE" ${maReservation.confirmee eq 'FALSE'?'selected':''}>EN COURS</option>
 						
 						</select>
 					</div>
@@ -58,12 +58,21 @@
 					<div class="col-sm-10">
 						<select class="custom-select" name="annulee" id="annulee">
 							<option value=""></option>
-							<option value="TRUE" ${maReservation.annulee eq 'TRUE'?'selected':''}>TRUE</option>
-							<option value="FALSE" ${maReservation.annulee eq 'FALSE'?'selected':''}>FALSE</option>
+							<option value="TRUE" ${maReservation.annulee eq 'TRUE'?'selected':''}>ANNULEE</option>
+							<option value="FALSE" ${maReservation.annulee eq 'FALSE'?'selected':''}>VALIDEE</option>
 						
 						</select>
 					</div>
 				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Id Vol</label>
+					<div class="col-sm-10">
+						<input type="text" step="1" class="form-control" name="vol.id"
+							id="vol.id" placeholder="Le Vol" required value="${vol.id}"/>
+					</div>
+				</div>
+
 
 				<div class="form-group row">
 					<div class="col-sm-2"></div>

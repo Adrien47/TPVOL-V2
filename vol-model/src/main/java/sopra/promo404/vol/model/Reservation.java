@@ -43,10 +43,10 @@ public class Reservation {
 	@OneToOne(mappedBy = "reservation", fetch = FetchType.EAGER)
 	@JoinColumn(name="pass_id")
 	private Passager passager;
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="vol_id")
     private Vol vol;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "client_id")
 	private Client client;
 

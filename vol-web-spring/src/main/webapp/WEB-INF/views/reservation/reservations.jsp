@@ -33,6 +33,7 @@
 						<th>Date de Réservation</th>
 						<th>Confirmée</th>
 						<th>Annulée</th>
+						<th>Vol</th>
 						
 					
 						<th></th>					</tr>
@@ -49,6 +50,7 @@
 									pattern="dd/MM/yyyy" /></td>
 							<td>${reservation.confirmee}</td>
 							<td>${reservation.annulee}</td>
+							<td>${reservation.vol.id}</td>
 							
 							
 
