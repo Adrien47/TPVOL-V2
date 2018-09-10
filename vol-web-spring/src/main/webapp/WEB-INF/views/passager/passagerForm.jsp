@@ -95,10 +95,10 @@
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Réservation</label>
 					<div class="col-sm-10">
-						<select class="custom-select" name="reservation.code" required>
+						<select class="custom-select" name="reservation.id" required>
 							<option value=""></option> 
 							<c:forEach items="${reservations}" var="resa">
-								<option value="${resa.code}" ${monPassager.reservation.code eq resa.code?'selected':''}>${resa.code}</option>
+								<option value="${resa.id}" ${monPassager.reservation.id eq resa.id?'selected':''}>${resa.code}</option>
 							</c:forEach>
 						</select>
 					</div>

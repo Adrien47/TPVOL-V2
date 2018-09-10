@@ -41,6 +41,7 @@ public class Reservation {
 	private boolean confirmee;
 	
 	@OneToOne(mappedBy = "reservation", fetch = FetchType.EAGER)
+	@JoinColumn(name="pass_id")
 	private Passager passager;
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="vol_id")

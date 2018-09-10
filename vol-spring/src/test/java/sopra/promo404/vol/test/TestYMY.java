@@ -1,12 +1,11 @@
 package sopra.promo404.vol.test;
 
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
 
-import sopra.promo404.vol.model.Aeroport;
-import sopra.promo404.vol.model.Aeroville;
-import sopra.promo404.vol.model.Ville;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import sopra.promo404.vol.model.Reservation;
+import sopra.promo404.vol.repositories.IRepositoryReservation;
 
 public class TestYMY {
 	public static void main(String[] args) throws ParseException {
@@ -56,6 +55,19 @@ public class TestYMY {
 //		
 //		idaoAeroville.save(aeroville00);
 //		idaoAeroville.save(aeroville01);
+		
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+				"classpath:application-context.xml");
+
+		// Démarrer spring
+		IRepositoryReservation repoReservation = context.getBean(IRepositoryReservation.class); // Demander le DAO à Spring
+
+		Reservation laresa = new Reservation(); // new ou transient
+
+		repoReservation.save(laresa); // managed
+
+		context.close();
+
 		
 		
 	}
