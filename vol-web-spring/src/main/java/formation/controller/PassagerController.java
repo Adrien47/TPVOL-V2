@@ -53,6 +53,7 @@ public class PassagerController {
 			model.addAttribute("monPassager", new Passager());
 		}
 
+		model.addAttribute("reservations", reservationRepo.findAllAvailableByPassager(id));
 		return "passager/passagerForm";
 	}
 	
