@@ -17,11 +17,11 @@ public class Aeroville {
 	@Version
 	private int version;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="aeroport_id")
 	private Aeroport aeroport;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="ville_id")
 	private Ville ville;
 	
