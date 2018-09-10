@@ -13,7 +13,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
-
+	<jsp:include page="../nav.jsp"></jsp:include>
 	<div class="container-fluid">
 		<header class="header">
 
