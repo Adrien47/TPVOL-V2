@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="sopra.promo404.vol.model.Vol"%>
+<%@ page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +15,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
-
+	<jsp:include page="../nav.jsp"></jsp:include>
 <div class="container">
 		<header class="header">
 
@@ -68,8 +71,14 @@
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Id Vol</label>
 					<div class="col-sm-10">
-						<input type="text" step="1" class="form-control" name="vol.id"
-							id="vol.id" placeholder="Le Vol" required value="${vol.id}"/>
+					<select class="custom-select" name="vol.id" required>
+							<option value=""></option>
+						<c:forEach items="${vols}" var="vol">
+								<option value="${vol.id}" ${reservation.vol.id eq arr.id?'selected':''}>${vol.id}</option>
+							</c:forEach>
+						</select>
+						
+							
 					</div>
 				</div>
 
@@ -94,9 +103,3 @@
 
 
 
-
-
-
-
-</body>
-</html>
