@@ -6,7 +6,7 @@
 		<li class="nav-item"><a class="nav-link" href="reservation" id="navreservation">Réservation</a></li>
 		<li class="nav-item"><a class="nav-link" href="passager" id="navpassager">Passager</a></li>
 		<li class="nav-item"><a class="nav-link" href="aeroport" id="navaeroport">Aeroport</a></li>
-		<li class="nav-item"><a class="nav-link" href="ville" id="navville">Aeroport</a></li>
+		<li class="nav-item"><a class="nav-link" href="ville" id="navville">Ville</a></li>
 		<li class="nav-item"><a class="nav-link" href="client" id="navclient">Client</a></li>
 	</ul>
 </nav>
